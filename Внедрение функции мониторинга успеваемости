@@ -9,3 +9,7 @@ getAllGrades() {
 addGrade(@Body() createGradeDto: CreateGradeDto) {
   return this.gradeService.addGrade(createGradeDto);
 }
+@Get('/average/:courseId')
+getAverageGrade(@Param('courseId') courseId: string) {
+  return this.gradeService.getAverageGrade(courseId);
+}
