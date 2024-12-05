@@ -1,0 +1,11 @@
+// GET /grades
+@Get()
+getAllGrades() {
+  return this.gradeService.getAllGrades();
+}
+
+// POST /grades
+@Post()
+addGrade(@Body() createGradeDto: CreateGradeDto) {
+  return this.gradeService.addGrade(createGradeDto);
+}
