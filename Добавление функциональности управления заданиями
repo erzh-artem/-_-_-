@@ -1,0 +1,26 @@
+// GET /tasks
+@Get()
+getAllTasks() {
+  return this.taskService.getAllTasks();
+}
+
+// POST /tasks
+@Post()
+createTask(@Body() createTaskDto: CreateTaskDto) {
+  return this.taskService.createTask(createTaskDto);
+}
+
+// PUT /tasks/:id
+@Put(':id')
+updateTask(
+  @Param('id') id: string,
+  @Body() updateTaskDto: UpdateTaskDto,
+) {
+  return this.taskService.updateTask(id, updateTaskDto);
+}
+
+// DELETE /tasks/:id
+@Delete(':id')
+deleteTask(@Param('id') id: string) {
+  return this.taskService.deleteTask(id);
+}
