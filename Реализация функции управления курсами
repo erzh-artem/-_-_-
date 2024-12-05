@@ -1,0 +1,26 @@
+// GET /courses
+@Get()
+getAllCourses() {
+  return this.courseService.getAllCourses();
+}
+
+// POST /courses
+@Post()
+createCourse(@Body() createCourseDto: CreateCourseDto) {
+  return this.courseService.createCourse(createCourseDto);
+}
+
+// PUT /courses/:id
+@Put(':id')
+updateCourse(
+  @Param('id') id: string,
+  @Body() updateCourseDto: UpdateCourseDto,
+) {
+  return this.courseService.updateCourse(id, updateCourseDto);
+}
+
+// DELETE /courses/:id
+@Delete(':id')
+deleteCourse(@Param('id') id: string) {
+  return this.courseService.deleteCourse(id);
+}
